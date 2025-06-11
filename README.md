@@ -1,14 +1,16 @@
 # VRPSimulationTool
 
+Thesis project
+
 ## Supported types of VRP:
 
 1. Capacitated VRP
     
     We have depot and some clients with demands. Vehicles have limited capacity.
 
-2. Classic VRP
+2. Time Windowed VRP
 
-    TBD
+    Classical VRP, but clients, depots, and vehicles have openning and closing time constraints and optional demand and capacity constrains.
 
 ## Supported tools
 
@@ -20,11 +22,16 @@
 
 2. Google OrTools
 
-    TODO
+    Widely used universal optimizing tools
 
     https://developers.google.com/optimization/introduction
 
 3. TODO
+
+## Examples
+
+1. https://github.com/i-sunny/cvrp_aco_ocl/tree/master/dataset/X
+2. http://dimacs.rutgers.edu/programs/challenge/vrp/vrptw/ TODO
 
 ## Used stack
 
@@ -33,7 +40,8 @@
     * fastapi
     * pyvpr
 2. typescript
-    * leaflet for OSM drawing
+    * Leaflet for OSM drawing
+    * Chart.js for graph plotting
 
 ## Build & run
 ```bash
