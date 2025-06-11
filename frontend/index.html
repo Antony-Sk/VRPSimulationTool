@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>VRP Visualization</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="static/styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>VRP Visualization</h1>
+        
+        <div id="map"></div>
+        
+        <form>
+            <label for="vrp-type">Choose VRP:</label>
+            <select id="vrp-type" name="vrp-type">
+                <option value="cvrp">Capacitated VRP (CVRP)</option>
+                <option value="twvrp">Time-windowed VRP (TWVRP) Not Implemented Yet</option>
+            </select>
+        </form>
+        <form>
+            <label for="vrp-solver">Choose tool:</label>
+            <select id="vrp-solver" name="vrp-solver">
+                <option value="or-tools">Google Or Tools Default Configuration</option>
+                <option value="pyvrp">PyVRP - Hybrid Generic Search</option>
+            </select>
+        </form>
+        
+        <div class="vrp-input-container">
+            <textarea id="vrp-input" rows="10" placeholder="Enter your JSON here...">{
+    "vehicles": [{"capacity": 15,"number": 5}],
+    "vertices": [
+        {"x": 55.7963, "y": 49.1264},
+        {"x": 55.7863, "y": 49.1364},
+        {"x": 55.7763, "y": 49.1064}
+    ],
+    "demands": [0, 1, 2],
+    "edges": [
+        {"frm": 0, "to": 1, "cost": 10},
+        {"frm": 0, "to": 2, "cost": 10},
+        {"frm": 2, "to": 1, "cost": 10}
+    ],
+    "depot_indices": [0]
+}</textarea>
+            <br>
+            <button id="solve-vrp-button">Solve VRP</button>
+        </div>
+        
+        <div class="button-group">
+            <button id="add-marker-button">Add vertex</button>
+            <button id="add-depot-button">Add depot vertex</button>
+            <button id="use-this-graph-button">Use this graph</button>
+        </div>
+        <a href="/dataset">Compare algorithms on dataset</a>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet.marker.slideto@0.2.0/Leaflet.Marker.SlideTo.js"></script>
+    <script src="static/index.js"></script>
+</body>
+
+</html>
